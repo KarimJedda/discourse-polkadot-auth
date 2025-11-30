@@ -41,13 +41,59 @@ It isn't Web3, but helps us leverage the most advanced forum software to test al
 
 ## Installation
 
-> Pending test 
+Use the below to test the plugin, for prod deployments I recommend to read the manual: https://github.com/discourse/discourse/blob/main/docs/INSTALL-cloud.md
+
+```
+~~ in some directory on your machine, ideally not with root
+
+# build the verifier 
+git clone https://github.com/KarimJedda/polkadot-signature-verifier
+cd polkadot-signature-verifier
+cargo build --release 
+cd ..
+
+# setup discourse
+git clone https://github.com/discourse/discourse.git
+cd discourse 
+git clone https://github.com/KarimJedda/discourse-polkadot-auth plugins/discourse-polkadot-auth
+
+# copy the verifier lib 
+cp ../polkadot-signature-verifier/target/release/libpolkadot_sig_verifier.* plugins/discourse-polkadot-auth/lib/verifier/
+
+d/boot_dev --init
+
+# play
+d/ember-cli & 
+d/rails s
+
+# Grant admin to some user 
+d/rake admin:create
+```
+
+With an admin user, setup the following: 
+
+```
+max_username_length -> 60
+username_change_period = 0
+default_trust_level = 0
+min_trust_to_create_topic = 1
+min_trust_to_post_links = 1
+min_trust_to_flag_posts = 1
+```
+
+And other fun things like deactive email etc etc. Have fun!
+
 
 ### Enable the Plugin
+
+Should be automatically enabled, but if it's messed up: 
 
 1. Go to **Admin → Settings → Plugins**
 2. Find "discourse-polkadot-auth"
 3. Enable `polkadot_authentication_enabled`
+
+
+Worth deactivating other login options too. 
 
 ## Configuration
 
