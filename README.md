@@ -29,7 +29,7 @@ It isn't Web3, but helps us leverage the most advanced forum software to test al
 |-------|-------|
 | Username | Full SS58 address (e.g., `5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY`) |
 | Email | `{SS58_ADDRESS}@dot.li` |
-| Name | On-chain identity display name (set via cron job) |
+| Name | On-chain identity display name (set via UI light client) |
 | Badge | "Verified On-Chain Identity" (if verified by registrar) |
 
 ## Prerequisites
