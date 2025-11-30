@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    polkadot_authentication_enabled: Enable discourse-polkadot-auth Polkadot wallet authentication provider
+    polkadot_authentication_provides_groups: Enable group support for discourse-polkadot-auth

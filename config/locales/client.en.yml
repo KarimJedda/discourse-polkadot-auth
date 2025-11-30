@@ -1,0 +1,8 @@
+en:
+  js:
+    login:
+      polkadotauth:
+        title: Sign in with Polkadot
+        name: Sign in with Polkadot
+    discourse_polkadot_auth:
+      title: "Sign in with Polkadot"

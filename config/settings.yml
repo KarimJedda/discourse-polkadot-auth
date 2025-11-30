@@ -1,0 +1,3 @@
+plugins:
+  polkadot_authentication_enabled: true
+  polkadot_authentication_provides_groups: true
